@@ -4,6 +4,7 @@ import AppContext from "./AppContext";
 const AppState = ({ children }) => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [cart,setCart]=useState([]);
 
   const fetchProduct = async () => {
     try {
@@ -24,8 +25,13 @@ const AppState = ({ children }) => {
     fetchProduct();
   }, []);
 
+  const addToCart=(products)=>{
+    setCart([...cart,products])
+
+  }
+
   return (
-    <AppContext.Provider value={{ product, loading }}>
+    <AppContext.Provider value={{ product, loading,cart,setCart,addToCart }}>
       {children}
     </AppContext.Provider>
   );

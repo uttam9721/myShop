@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 
 const ProductDetails = () => {
+    const {addToCart} =useContext(AppContext);
   const { id } = useParams();
   const { product } = useContext(AppContext);
 
@@ -27,7 +28,9 @@ const ProductDetails = () => {
           <p className="mt-4 text-gray-700">{selectedProduct.description}</p>
           <p className="mt-6 text-2xl font-bold text-green-600">${selectedProduct.price}</p>
 
-          <button className="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+          <button
+          onClick={()=>addToCart(selectedProduct)}
+          className="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
             Add to Cart
           </button>
         </div>
