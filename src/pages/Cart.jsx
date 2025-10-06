@@ -59,7 +59,7 @@ const Cart = () => {
               </div>
 
               {/* Buy Now Button */}
-              <button className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+              <button className="px-6 py-2 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition">
                 Buy Now
               </button>
             </div>

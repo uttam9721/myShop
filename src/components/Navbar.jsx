@@ -62,7 +62,7 @@ const Navbar = () => {
               to="/register"
               className="px-4 py-1 rounded-xl shadow hover:bg-gray-600 transition"
             >
-              Register
+              {/* Register */}
             </Link>
           </div>
         </div>
