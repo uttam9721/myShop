@@ -1,60 +1,7 @@
-// import React from "react";
-
-// const Address=()=> {
-//   return (
-//     <div className="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-md">
-//       <h2 className="text-2xl font-semibold mb-6 text-center">Delivery Address</h2>
-
-//       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-//         <div>
-//           <label className="block text-sm font-medium mb-1">Full Name</label>
-//           <input type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your name" />
-//         </div>
-
-//         <div>
-//           <label className="block text-sm font-medium mb-1">Phone Number</label>
-//           <input type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter phone number" />
-//         </div>
-
-//         <div>
-//           <label className="block text-sm font-medium mb-1">Alternate Number</label>
-//           <input type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter alternate number" />
-//         </div>
-
-//         <div>
-//           <label className="block text-sm font-medium mb-1">Pincode</label>
-//           <input type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter pincode" />
-//         </div>
-//       </div>
-
-//       <div className="mt-4">
-//         <label className="block text-sm font-medium mb-1">State</label>
-//         <input type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter state" />
-//       </div>
-
-//       <div className="mt-4">
-//         <label className="block text-sm font-medium mb-1">Full Address</label>
-//         <textarea className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" rows="3" placeholder="Enter full address" />
-//       </div>
-
-//       <div className="mt-4">
-//         <label className="block text-sm font-medium mb-1">Nearby Famous Place</label>
-//         <input type="text" className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter nearby landmark" />
-//       </div>
-
-//       <div className="flex justify-center mt-6">
-//         <button className="bg-gray-800 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition-all duration-300">Pay Now</button>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Address;
-
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-import toast, { Toaster } from "react-hot-toast";
+// import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 export default function Address() {
@@ -79,23 +26,23 @@ export default function Address() {
     const { name, phone, altNumber, pincode, state, address, landmark } = form;
 
     if (!name || !phone || !altNumber || !pincode || !state || !address || !landmark) {
-      toast.error("All fields are required!");
+      // toast.error("All fields are required!");
       return;
     }
 
-    toast.success("Processing Payment...");
+    // toast.success("Processing Payment...");
     setShowSuccess(true);
 
     setTimeout(() => {
       setShowSuccess(false);
-      toast.success("Payment Successful!");
+      // toast.success("Payment Successful!");
       navigate("/"); // redirect after success
     }, 3000);
   };
 
   return (
     <div className="relative max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-md overflow-hidden">
-      <Toaster position="top-center" reverseOrder={false} />
+      {/* <Toaster position="top-center" reverseOrder={false} /> */}
       <h2 className="text-2xl font-semibold mb-6 text-center">Delivery Address</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
