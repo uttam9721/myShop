@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from "react";
 import AppContext from "../context/AppContext";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+// import Address from "./Address";
 const ProductCard = ({ item }) => {
   const { addToCart } = useContext(AppContext);
   const images = [item.image, item.image, item.image];
@@ -16,7 +16,6 @@ const ProductCard = ({ item }) => {
       setCurrent(index);
     }
   };
-
   const goToImage = (index) => {
     if (scrollRef.current) {
       scrollRef.current.scrollTo({
@@ -66,9 +65,11 @@ const ProductCard = ({ item }) => {
 
       {/* Buttons outside of Link */}
       <div className="flex gap-3 mt-4 w-full justify-center">
-        <button className="flex-1 cursor-pointer px-4 py-2 border border-gray-600 text-gray-800 rounded-lg shadow hover:bg-gray-600 hover:text-white transition">
+        <Link to={'/address'}
+
+        className="flex-1 cursor-pointer px-4 py-2 border border-gray-600 text-gray-800 rounded-lg shadow hover:bg-gray-600 hover:text-white transition">
           Buy Now
-        </button>
+        </Link>
         <button
           onClick={() => addToCart(item)}
           className="flex-1 cursor-pointer px-4 py-2 bg-gray-300 rounded-lg shadow hover:bg-gray-400 transition"
