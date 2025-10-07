@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import AppContext from '../context/AppContext';
+import { Link } from 'react-router-dom';
 // import Product
 
 const ProductDetails = () => {
@@ -29,9 +30,9 @@ const ProductDetails = () => {
           <p className="mt-4 text-gray-700">{selectedProduct.description}</p>
           <p className="mt-6 text-2xl font-bold text-green-600">₹ {selectedProduct.price}</p>
 
-          <button
+       <button   
           onClick={()=>addToCart(selectedProduct)}
-          className="mt-6 px-6 py-2 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-800 transition">
+          className="mt-6 px-6 py-2 cursor-pointer bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-800 transition">
             Add to Cart
           </button>
         </div>

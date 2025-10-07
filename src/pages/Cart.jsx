@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
 import toast, { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 const Cart = () => {
   const { cart, setCart } = useContext(AppContext);
 
@@ -58,11 +59,12 @@ const Cart = () => {
                   +
                 </button>
               </div>
-
               {/* Buy Now Button */}
-              <button className="px-6 py-2 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition">
+             <Link to={'/address'}>
+              <button className="px-6 py-2 bg-gray-600 cursor-pointer text-white font-semibold rounded-lg hover:bg-gray-700 transition">
                 Buy Now
               </button>
+             </Link>
             </div>
           </div>
         </div>
