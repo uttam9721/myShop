@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
 
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AppContext from "./AppContext";
+import toast, { Toaster } from 'react-hot-toast';
 
 const AppState = ({ children }) => {
   const [product, setProduct] = useState([]);
@@ -9,10 +10,11 @@ const AppState = ({ children }) => {
   const fetchProduct = async () => {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
+
       
       const data = await response.json();
       setProduct(data);
-      console.log(data);
+      // console.log(data);
       
       setLoading(false);
     } catch (error) {
@@ -27,11 +29,13 @@ const AppState = ({ children }) => {
 
   const addToCart=(products)=>{
     setCart([...cart,products])
+    toast.success('added to cart')
 
   }
 
   return (
     <AppContext.Provider value={{ product, loading,cart,setCart,addToCart }}>
+            <Toaster position="top-center" reverseOrder={false} />
       {children}
     </AppContext.Provider>
   );

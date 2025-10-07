@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
-
+import toast, { Toaster } from 'react-hot-toast';
 const Cart = () => {
   const { cart, setCart } = useContext(AppContext);
 
@@ -9,6 +9,7 @@ const Cart = () => {
   }
 
   const handleQuantityChange = (idx, delta) => {
+    toast.success('added in the cart')
     const updatedCart = [...cart];
     updatedCart[idx].quantity = Math.max(1, (updatedCart[idx].quantity || 1) + delta);
     setCart(updatedCart);
