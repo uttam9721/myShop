@@ -28,7 +28,10 @@ const ProductCard = ({ item }) => {
   return (
     <div className="border rounded-xl shadow-lg p-4 flex flex-col items-center w-full max-w-xs mx-auto bg-white hover:shadow-2xl transition-shadow">
       {/* Link only for image and title */}
-      <Link to={`/products/${item.id}`} className="flex flex-col items-center w-full">
+      <Link
+        to={`/products/${item.id}`}
+        className="flex flex-col items-center w-full"
+      >
         <div
           ref={scrollRef}
           onScroll={handleScroll}
@@ -56,7 +59,9 @@ const ProductCard = ({ item }) => {
           ))}
         </div>
 
-        <h2 className="text-lg font-semibold text-center mt-3 text-gray-800">{item.title}</h2>
+        <h2 className="text-lg font-semibold text-center mt-3 text-gray-800">
+          {item.title}
+        </h2>
         <p className="text-sm text-gray-500 text-center mt-1">
           {item.description.substring(0, 80)}...
         </p>
@@ -65,11 +70,9 @@ const ProductCard = ({ item }) => {
 
       {/* Buttons outside of Link */}
       <div className="flex gap-3 mt-4 w-full justify-center">
-        <Link to={'/address'}
-
-        className="flex-1 cursor-pointer px-4 py-2 border border-gray-600 text-gray-800 rounded-lg shadow hover:bg-gray-600 hover:text-white transition">
+        <div className="flex-1 cursor-pointer px-4 py-2 border border-gray-600 text-gray-800 rounded-lg shadow hover:bg-gray-600 hover:text-white transition">
           Buy Now
-        </Link>
+        </div>
         <button
           onClick={() => addToCart(item)}
           className="flex-1 cursor-pointer px-4 py-2 bg-gray-300 rounded-lg shadow hover:bg-gray-400 transition"
@@ -86,7 +89,9 @@ const Products = () => {
 
   if (loading) {
     return (
-      <p className="text-center text-lg font-semibold mt-10">Loading products...</p>
+      <p className="text-center text-lg font-semibold mt-10">
+        Loading products...
+      </p>
     );
   }
 
