@@ -9,6 +9,7 @@ import Cart from './pages/Cart';
 import Footer from './components/Footer';
 import SearchItem from './pages/SearchItem';
 import Address from './pages/Address';
+import Contact from './pages/Contact';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/cart' element={<Cart/>} />    
         <Route path='/search/:term' element={<SearchItem/>} />
         <Route path='/address' element={<Address/>} />
+        <Route path='/contact' element={<Contact/>} />
       </Routes>
       <Footer />
       </Router>
