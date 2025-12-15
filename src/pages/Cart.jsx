@@ -4,7 +4,6 @@
 // import { Link } from 'react-router-dom';
 // const Cart = () => {
 //   const { cart, setCart } = useContext(AppContext);
-
 //   if (cart.length === 0) {
 //     return <p className="text-center mt-10 text-lg">Your cart is empty.</p>;
 //   }
